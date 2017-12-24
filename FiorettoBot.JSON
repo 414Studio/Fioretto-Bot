@@ -1,7 +1,60 @@
-VAR fiorettoBot(){
+API_ENDPOINT = 'https://discordapp.com/api/v6'
+CLIENT_ID = '394471105236172801'
+CLIENT_SECRET = 'wmQVtTIzI-Byc2l2w9hQ9i3qdZjjMQOj'
 
-  console.log('HelloWorld');
+def exchange_code(code):
+  data = {
+    'client_id': CLIENT_ID,
+    'client_secret': CLIENT_SECRET,
+    'grant_type': 'authorization_code',
+    'code': code,
+    'redirect_uri': REDIRECT_URI
+  }
+  headers = {
+    'Content-Type': 'application/x-www-form-urlencoded'
+  }
+  r = requests.post('%s/oauth2/token' % API_ENDPOINT, data, headers)
+  r.raise_for_status()
+  return r.json()
 
+{
+    "token_type": "Bearer",
+    "guild": {
+        "mfa_level": 0,
+        "emojis": [],
+        "application_id": null,
+        "name": "SomeTest",
+        "roles": [
+            {
+                "hoist": false,
+                "name": "@everyone",
+                "mentionable": false,
+                "color": 0,
+                "position": 0,
+                "id": "290926798626357250",
+                "managed": false,
+                "permissions": 49794241
+            }
+        ],
+        "afk_timeout": 300,
+        "system_channel_id": null,
+        "widget_channel_id": null,
+        "region": "us-east",
+        "default_message_notifications": 1,
+        "embed_channel_id": null,
+        "explicit_content_filter": 0,
+        "splash": null,
+        "features": [],
+        "afk_channel_id": null,
+        "widget_enabled": false,
+        "verification_level": 0,
+        "owner_id": "53908232999183680",
+        "embed_enabled": false,
+        "id": "2909267986347357250",
+        "icon": null
+    },
+    "access_token": "zMndOe7jFLXGawdlxMOdNvXjjOce5X",
+    "scope": "bot",
+    "expires_in": 604800,
+    "refresh_token": "mgp8qnvBwJcmadwgCYKyYD5CAzGAX4"
 }
-
-fiorettoBot();
