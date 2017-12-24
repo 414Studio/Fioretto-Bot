@@ -1,6 +1,6 @@
 VAR fiorettoBot(){
 
-  console.log('Hello World');
+  console.log('HelloWorld');
 
 }
 
