@@ -1,0 +1,7 @@
+VAR fiorettoBot(){
+
+  console.log('Hello World');
+
+}
+
+fiorettoBot();
